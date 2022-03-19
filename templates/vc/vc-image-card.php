@@ -82,9 +82,12 @@ if(!function_exists('image_card_container_render_handler')){
         , $atts));
 
         $html = '<section class="image-nav pt-12 md:pt-0">
-        <div class="mx-auto grid w-2/3 grid-cols-1 grid-rows-3 gap-0
-         md:container md:grid-cols-3 md:grid-rows-1 md:gap-2.5">' .
-          do_shortcode($content) . '</div></section>';
+        <div class="mx-auto w-2/3 md:container">
+          <div
+            class="grid grid-cols-1 grid-rows-3
+            gap-0 md:grid-cols-3 md:grid-rows-1 md:gap-2.5 lg:px-14"
+          >' .
+          do_shortcode($content) . '</div></div></section>';
 
         return $html;
     }
@@ -123,7 +126,7 @@ if(!function_exists('image_card_item_render_handler')){
             $html = '
             <div class="single-image-nav even:translate-y-0 md:even:-translate-y-32 z-10">
           <div class="relative">
-            <img src="'. $image. '" class="z-m10 h-80 w-auto md:w-full" alt="single-nav" />
+            <img src="'. $image. '" class="z-m10 h-full w-auto md:w-full lg:h-80" alt="'.$content.'" />
           </div>
           <a href="'.$link.'">
           <div '.$color.' class="z-50 mx-2.5 -translate-y-8 pt-3 pb-20 text-center">

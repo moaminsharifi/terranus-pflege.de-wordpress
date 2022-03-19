@@ -3,6 +3,9 @@ vc_map(array(
     "name" => __("Back Quote", "terranus") ,
     "base" => "backqoute_item",
     "content_element" => true,
+    "posttypes" => array(
+        'only' => 'page'
+    ) ,
     "category" => __('Terranus Modules', 'terranus') ,
     "params" => array(
         // add params same as with any other content element
@@ -59,7 +62,7 @@ if (!function_exists('backqoute_item_render_handler'))
         $white_text = empty($white_text) ? '' : 'text-white';
         $border_color = empty($border_color) ? '-tw-border-opacity: 1; border-color: rgb(255 255 255 / var(--tw-border-opacity));' : 'border-color:' . $border_color . ';';
 
-        $html = '<div style="' . $border_color . '" class="md:border-l-30 border-l-4 px-8 md:px-10 ' . $white_text . '">
+        $html = '<div style="' . $border_color . '" class="md:border-l-30 2xl:pl-15 2xl:pr-22.5 border-l-4 px-8 ' . $white_text . '">
             <h3 class="pt-12 font-sans text-4xl font-bold uppercase">' . $title . '</h3>
             <p class="font-sans-text pt-8 pb-14 text-lg">' . $description . '</p></div>';
         return $html;

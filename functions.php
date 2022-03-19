@@ -18,6 +18,7 @@ function terranus_theme_scripts()
     // wp_enqueue_style( 'vc-style', get_theme_file_uri( '/assets/css/vc.css' ), array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style('terranus-style', get_theme_file_uri('/assets/css/style.css') , array() , wp_get_theme()->get('Version'));
     wp_enqueue_style('swiper-style', get_theme_file_uri('/assets/css/swiper-bundle.min.css') , array() , '8.0.6');
+   
     
 
     wp_enqueue_script('jquery-scripts', get_theme_file_uri('/assets/js/jquery.min.js') , array() , "1.9.1", true);
@@ -27,17 +28,7 @@ function terranus_theme_scripts()
 
 }
 add_action('wp_enqueue_scripts', 'terranus_theme_scripts');
-/**
- * Load google font
- */
-function wpb_add_google_fonts()
-{
 
-    wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap', false);
-
-}
-
-add_action('wp_enqueue_scripts', 'wpb_add_google_fonts');
 
 /**
  * Load Font Awesome
@@ -82,6 +73,7 @@ if (defined('WPB_VC_VERSION'))
 {
     // with containers
     require_once (get_template_directory() . '/templates/vc/vc-container.php');
+    require_once (get_template_directory() . '/templates/vc/vc-post-container.php');
     require_once (get_template_directory() . '/templates/vc/vc-image-card.php');
     require_once (get_template_directory() . '/templates/vc/vc-accordion.php');
     require_once (get_template_directory() . '/templates/vc/vc-info-card.php');
@@ -92,8 +84,10 @@ if (defined('WPB_VC_VERSION'))
     require_once (get_template_directory() . '/templates/vc/vc-backquote-with-bg.php');
     require_once (get_template_directory() . '/templates/vc/vc-last-posts-with-bg.php');
     require_once (get_template_directory() . '/templates/vc/vc-team.php');
+    require_once (get_template_directory() . '/templates/vc/vc-paragraph.php');
+    require_once (get_template_directory() . '/templates/vc/vc-heading.php');
+    require_once (get_template_directory() . '/templates/vc/vc-post-backquote.php');
     
     // require_once (get_template_directory() . '/templates/vc/vc-last-posts.php');
 
 }
-

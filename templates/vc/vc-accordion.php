@@ -88,9 +88,9 @@ if (!function_exists('accordion_container_render_handler'))
             'heading'=>'',
         ) , $atts));
 
-        $html = '<section class="' . $el_class . 'advisory mx-auto  w-2/3 py-20 md:container ">
+        $html = '<section class="' . $el_class . 'mx-auto w-2/3 py-20 md:container "><div class="xl:px-16">
       <h3 class="font-sans text-4xl uppercase leading-snug">' . $heading . '</h3>
-      <div class="accordion pt-9">' . do_shortcode($content) . '</div></section>';
+      <div class="accordion pt-9">' . do_shortcode($content) . '</div></div></section>';
 
         return $html;
     }

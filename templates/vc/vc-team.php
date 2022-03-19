@@ -88,9 +88,11 @@ if (!function_exists('team_item_render_handler'))
         $image_url = empty($image) ? get_template_directory_uri() . '/assets/images/vc/default-slide.png' : wp_get_attachment_image_src($image, 'full')[0];
 
         $html ='
-        <section class="mx-auto -mt-14 w-2/3 md:container">
+        <section class="mx-auto w-2/3 md:container">
+        <div class="-mt-14">
         <img src="'.$image_url.'" alt="'.$title.'" class="w-full" />
-        <div class="inner-container mt-32 mb-36 lg:mx-16">
+        </div>
+        <div class="inner-container mt-32 mb-36 px-4 md:px-16">
           <div
             class="md:border-l-30 border-terranus-tertiary text-terranus-tertiary mb-24 border-l-4 px-8 md:px-14"
           >

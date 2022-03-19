@@ -1,13 +1,13 @@
 <?php
 //Register "container" content element. It will hold all your inner (child) content elements
 vc_map(array(
-    "name" => __("Terranus Container", "terranus") ,
-    "base" => "terranus_container",
+    "name" => __("Terranus Post Container", "terranus") ,
+    "base" => "terranus_post_container",
     "content_element" => true,
     "show_settings_on_create" => false,
     "is_container" => true,
     "posttypes" => array(
-        'only' => 'page'
+        'only' => 'post'
     ) ,
     "category" => __('Terranus Modules', 'terranus') ,
     "params" => array(
@@ -32,31 +32,27 @@ vc_map(array(
 //Your "container" content element should extend WPBakeryShortCodesContainer class to inherit all required functionality
 if (class_exists('WPBakeryShortCodesContainer'))
 {
-    class WPBakeryShortCode_Terranus_Container extends WPBakeryShortCodesContainer
+    class WPBakeryShortCode_Terranus_Post_Container extends WPBakeryShortCodesContainer
     {
 
     }
 }
 
-if (!function_exists('terranus_container_render_handler'))
+if (!function_exists('terranus_post_container_render_handler'))
 {
-    /**
-     * <section class="seminare bg-terranus-secondary-2">
-     * <div class="mx-auto w-2/3 py-36 md:container">
-     *</div>
-     *</section>
-     */
-    function terranus_container_render_handler($atts, $content = null)
+
+    function terranus_post_container_render_handler($atts, $content = null)
     {
         extract(shortcode_atts(array(
             'el_class' => '',
             'color' => ''
         ) , $atts));
-        $bg_color_style = empty($color) ? '--tw-bg-opacity: 1; background-color: rgb(0 115 146 / var(--tw-bg-opacity));' : 'background-color:' . $color . ';';
-        $html = '<section style="' . $bg_color_style . '" class="' . $el_class . '" ><div class="pb-18 mx-auto w-2/3 pt-20 md:container"><div class="inner-container 2xl:px-16">' . do_shortcode($content) . '</div><div></section>';
+        $bg_color_style = empty($color) ? '' : 'background-color:' . $color . ';';
+
+        $html = '<section style="' . $bg_color_style . '" class="' . $el_class . '" ><div class="py-18 mx-auto w-2/3 md:container">' . do_shortcode($content) . '</div></section>';
 
         return $html;
     }
-    add_shortcode('terranus_container', 'terranus_container_render_handler');
+    add_shortcode('terranus_post_container', 'terranus_post_container_render_handler');
 }
 

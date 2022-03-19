@@ -1,9 +1,13 @@
+<?php
+$bg_color_style = is_home() ? '--tw-bg-opacity: 1; background-color: rgb(0 165 158 / var(--tw-bg-opacity)); }' :''  ;
+?>
 <footer>
-       <section class="bg-terranus-green -mt-[1px]">
-        <div class="mx-auto w-2/3 md:container">
-          <div class="bg-terranus-secondary-2">
+       <section style="<?php echo $bg_color_style ?>"
+       class="newsletter -mt-[1px]">
+        <div class="mx-auto w-2/3 md:container translate-y-[10.25rem]">
+          <div class="bg-terranus-secondary-2 px-8 lg:px-4 xl:px-0">
             <div
-              class="inner-container px-4 py-12 text-center text-white lg:mx-16 lg:px-0"
+              class="inner-container px-4 py-12 text-center text-white 2xl:px-16 2xl:pt-11 2xl:pb-10"
             >
               <h2
                 class="mb-7 font-sans text-2xl font-bold uppercase text-white lg:text-4xl"
@@ -35,7 +39,7 @@
         </div>
       </section>
       <section class="bg-terranus-gray-1">
-        <div class="w-2/3 md:container mx-auto">
+        <div class="mx-auto w-2/3 pt-40 md:container">
           <div
             class="inner-container flex flex-col lg:flex-row justify-between py-12 text-center text-white"
           >

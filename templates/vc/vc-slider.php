@@ -84,7 +84,7 @@ if (!function_exists('slider_container_render_handler'))
         ) , $atts));
 
         $html = ' <section>
-        <div class="' . $el_class . 'swiper h-180 relative mb-24 w-full">
+        <div class="' . $el_class . 'swiper h-screen md:h-192 lg:h-180 relative mb-24 w-full">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper relative mb-12">
             <!-- Slides -->' . do_shortcode($content) . '</div>
@@ -118,11 +118,11 @@ if (!function_exists('slider_item_render_handler'))
         $bg_image_style = 'background-image: url(' . $image_url . ');';
         $html = '<div
               style="' . $bg_image_style . '"
-              class="swiper-slide h-180  relative flex w-full bg-slate-300 bg-cover bg-center bg-no-repeat sm:h-full"
+              class="swiper-slide h-180 md:h-192 lg:h-180 relative flex w-full bg-slate-300 bg-cover bg-center bg-no-repeat sm:h-full"
             >
               <div
                 style="' . $bg_color_style . '"
-                class="lg:mb-20 md:h-102 xl:h-102 absolute bottom-0 left-0 h-auto w-full px-10 text-white sm:h-screen md:-bottom-20 md:w-4/5 md:px-32"
+                class="md:h-160 lg:h-102 xl:h-102 absolute bottom-0 left-0 h-auto w-full px-10 text-white sm:h-screen md:-bottom-20 md:w-4/5 md:px-32 lg:mb-20 xl:pl-[16.5rem]"
               >
                 <h2
                   class="py-16 pb-8 text-2xl font-bold uppercase sm:w-4/5 md:py-12 md:text-5xl"

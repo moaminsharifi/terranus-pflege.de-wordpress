@@ -118,21 +118,15 @@ if (!function_exists('info_card_item_render_handler'))
         $bg_icon = empty($bg_icon)? '--tw-bg-opacity: 1; background-color: rgb(0 115 146 / var(--tw-bg-opacity));' : 'background-color: ' . $bg_icon . ';';
         
         $html = '
-           <div class="single-info flex flex-col 
-      group
-      odd:single-info-odd
-      even:single-info-even
-       md:odd:flex-row 
-       md:even:flex-row-reverse">
+           <div class="single-info odd:single-info-odd even:single-info-even first:mb-8 my-8 flex flex-col md:flex-row even:md:flex-row-reverse xl:relative xl:block xl:h-[378px]">
         <div style="'.$bg_icon.'"
-        class="icon h-32 p-12 lg:h-64 lg:px-22 lg:py-18 flex justify-center items-center">
+        class="icon xl:h-65 xl:w-65 flex h-32 items-center justify-center p-12 lg:h-[10rem] lg:w-[14rem] xl:absolute">
 
           <i class="text-white '.$icon.'  h-16 w-16 
               lg:h-24 lg:w-24 "></i>
         </div>
         <div style="'.$bg_main.'"
-          class="content w-full md:px-22  bg-opacity-25 px-10 py-10
-          ">
+          class="content w-full  md:px-22 bg-opacity-25">
           <h3 class="text-terranus-gray-1 z-10 font-sans text-xl font-bold uppercase leading-normal">
             '.$title.'
           </h3>

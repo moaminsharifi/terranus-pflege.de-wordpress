@@ -1,6 +1,6 @@
 <?php
 vc_map([
-    "name" => __("Last Posts Background", "terranus"),
+    "name" => __("Last Posts", "terranus"),
     "base" => "last_posts_with_bg_item",
     "content_element" => true,
     "category" => __("Terranus Modules", "terranus"),
@@ -62,19 +62,18 @@ if (!function_exists("last_posts_with_bg_item_render_handler")) {
             while ($query->have_posts() || $post_holder < $count) {
                 $post_holder++;
                 $query->the_post();
-                $tags = get_tags();
-                $tags_array = [];
-                foreach ($tags as $tag) {
-                  $tags_array[] = $tag->name;
+                $categories = get_categories();
+                $categories_array = [];
+                foreach ($categories as $category) {
+                  $categories_array[] = $category->name;
                 }
-                $tags_output = implode(", ",$tags_array);
+                $categories_output = implode(", ",$categories_array);
 
                 
                 $articles .=
                     '<article
               
-              class="blog-single
-               col-span-2 mt-4 bg-white last:col-span-2 last:last-single-blog lg:col-span-1 xl:last:mx-10 xl:first:ml-10 xl:first:mr-0 xl:ml-0 xl:mr-10"
+              class="blog-single last:last-single-blog col-span-2 mt-4 bg-white last:col-span-2 lg:col-span-1"
             >
               <header>
                 <img
@@ -106,7 +105,7 @@ if (!function_exists("last_posts_with_bg_item_render_handler")) {
                       />
                     </svg>
                     ' .
-                    $tags_output .
+                    $categories_output .
                     '
                   </span>
                 </div>
@@ -136,9 +135,11 @@ if (!function_exists("last_posts_with_bg_item_render_handler")) {
               </footer>
             </article>';
             }
-        } else {
-            // no posts found
-        }
+        } else{
+  $articles .= '<h2 class="my-7 font-sans text-xl font-bold uppercase text-white">
+              No posts found!
+            </h2>';
+}
 
         $html =
             '
@@ -146,6 +147,7 @@ if (!function_exists("last_posts_with_bg_item_render_handler")) {
             $bg_color_style .
             '" class=" pb-56">
         <div class="pt-26 mx-auto w-2/3 md:container">
+        <div class="2xl:px-[4.125rem]">
           <h2 class="font-sans text-xl font-bold uppercase leading-normal text-white md:text-4xl">
            ' .
             $title .
@@ -155,6 +157,7 @@ if (!function_exists("last_posts_with_bg_item_render_handler")) {
           ' .
             $articles .
             '
+        </div>
         </div>
         </div>
         </section>';

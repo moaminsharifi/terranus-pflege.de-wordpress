@@ -475,6 +475,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .container {
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
   padding-right: 1rem;
   padding-left: 1rem;
 }
@@ -496,31 +498,37 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
+    padding-right: 7rem;
+    padding-left: 7rem;
   }
 }
 
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-right: 10.5rem;
+    padding-left: 10.5rem;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
     max-width: 1280px;
+    padding-right: 13rem;
+    padding-left: 13rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
     padding-right: 16.5rem;
     padding-left: 16.5rem;
   }
 }
 
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-    padding-right: 20.5rem;
-    padding-left: 20.5rem;
-  }
+.navbar-shadow{
+  box-shadow: 0px 2px 4px 0px #727272;
 }
 
 .accordion-box{
@@ -828,9 +836,23 @@ textarea {
 }
 
 .swiper-pagination {
+  z-index: 10;
   position: absolute;
-  left: 72%;
-  bottom: 21rem;
+  right: 2.5rem;
+  top: 15.5rem;
+}
+
+@media (min-width: 1024px) {
+  .swiper-pagination {
+    left: 72%;
+  }
+
+  .swiper-pagination {
+    bottom: 21rem;
+  }
+}
+
+.swiper-pagination {
   display: flex;
   width: 5rem;
 }
@@ -851,25 +873,46 @@ textarea {
   position: absolute;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 200px) {
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-    left: 70%;
+    top: 15rem;
   }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  top: 16.3rem;
+  left: 78%;
 }
 
 @media (min-width: 768px) {
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
     left: 64%;
   }
-}
 
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-  left: 60%;
-}
-
-@media (min-width: 768px) {
   .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
     bottom: 21rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    top: 23rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    top: 23rem;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    left: 71.4%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    left: 71.4%;
   }
 }
 
@@ -877,12 +920,21 @@ textarea {
   bottom: 2rem;
   display: flex;
   width: 5rem;
+  height: 5rem;
+}
+
+@media (min-width: 768px) {
+  .swiper-horizontal>.swiper-pagination-bullets > :not([hidden]) ~ :not([hidden]), .swiper-pagination-bullets.swiper-pagination-horizontal > :not([hidden]) ~ :not([hidden]), .swiper-pagination-custom > :not([hidden]) ~ :not([hidden]), .swiper-pagination-fraction > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
 }
 
 .swiper-horizontal>.swiper-pagination-bullets > :not([hidden]) ~ :not([hidden]), .swiper-pagination-bullets.swiper-pagination-horizontal > :not([hidden]) ~ :not([hidden]), .swiper-pagination-custom > :not([hidden]) ~ :not([hidden]), .swiper-pagination-fraction > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 @media (min-width: 768px) {
@@ -949,52 +1001,163 @@ textarea {
   margin-bottom: 2.5rem;
 }
 
+/* .odd\:single-info-odd .content{
+@apply md:-ml-8;
+@apply md:mt-12;
+@apply lg:-ml-12;
+@apply lg:mt-10;
+@apply mb-5;
+}
+.even\:single-info-even .content{
+@apply md:-mr-8;
+@apply md:mt-16;
+@apply lg:-mr-12;
+@apply lg:mt-32;
+@apply mb-5;
+} */
+
+.single-info:nth-child(even) {
+  margin-bottom: 5rem;
+}
+
+.single-info:nth-child(even) .content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 42px;
+  padding-bottom: 38px;
+}
+
 @media (min-width: 768px) {
-  .odd\:single-info-odd .content {
-    margin-left: -2rem;
+  .single-info:nth-child(even) .content {
+    padding-left: 3.5rem;
   }
 
-  .odd\:single-info-odd .content {
+  .single-info:nth-child(even) .content {
+    width: 706px;
+  }
+
+  .single-info:nth-child(even) .content {
+    margin-right: -2rem;
+  }
+
+  .single-info:nth-child(even) .content {
     margin-top: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .odd\:single-info-odd .content {
-    margin-left: -3rem;
+  .single-info:nth-child(even) .content {
+    padding-left: 4rem;
   }
 
-  .odd\:single-info-odd .content {
+  .single-info:nth-child(even) .content {
+    padding-right: 5rem;
+  }
+
+  .single-info:nth-child(even) .content {
+    margin-left: -2rem;
+  }
+
+  .single-info:nth-child(even) .content {
     margin-top: 2.5rem;
   }
 }
 
-.odd\:single-info-odd .content {
-  margin-bottom: 1.25rem;
+@media (min-width: 1280px) {
+  .single-info:nth-child(even) .content {
+    position: absolute;
+  }
+
+  .single-info:nth-child(even) .content {
+    left: -2rem;
+  }
+
+  .single-info:nth-child(even) .content {
+    top: 90px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .single-info:nth-child(even) .content {
+    left: 28px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .single-info:nth-child(even) .icon {
+    right: 0px;
+  }
+}
+
+.single-info:nth-child(odd) .content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 42px;
+  padding-bottom: 38px;
+}
+
+@media (min-width: 1280px) {
+  .single-info:nth-child(odd) .content {
+    position: absolute;
+  }
 }
 
 @media (min-width: 768px) {
-  .even\:single-info-even .content {
-    margin-right: -2rem;
+  .single-info:nth-child(odd) .content {
+    padding-left: 3.5rem;
   }
 
-  .even\:single-info-even .content {
-    margin-top: 4rem;
+  .single-info:nth-child(odd) .content {
+    width: 706px;
+  }
+
+  .single-info:nth-child(odd) .content {
+    margin-left: -2.5rem;
+  }
+
+  .single-info:nth-child(odd) .content {
+    margin-top: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .even\:single-info-even .content {
-    margin-right: -3rem;
+  .single-info:nth-child(odd) .content {
+    padding-right: 4rem;
   }
 
-  .even\:single-info-even .content {
-    margin-top: 8rem;
+  .single-info:nth-child(odd) .content {
+    padding-left: 5rem;
+  }
+
+  .single-info:nth-child(odd) .content {
+    margin-left: -2rem;
+  }
+
+  .single-info:nth-child(odd) .content {
+    margin-top: 2.5rem;
   }
 }
 
-.even\:single-info-even .content {
-  margin-bottom: 1.25rem;
+@media (min-width: 1280px) {
+  .single-info:nth-child(odd) .content {
+    right: -4rem;
+  }
+
+  .single-info:nth-child(odd) .content {
+    top: 0px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .single-info:nth-child(odd) .content {
+    right: -4px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .single-info:nth-child(odd) .icon {
+    left: 0px;
+  }
 }
 
 .blog-single header img {
@@ -1044,6 +1207,14 @@ textarea {
   left: 0px;
 }
 
+.right-0 {
+  right: 0px;
+}
+
+.top-\[130px\] {
+  top: 130px;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -1060,18 +1231,31 @@ textarea {
   grid-column: span 2 / span 2;
 }
 
+.col-span-8 {
+  grid-column: span 8 / span 8;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
 .float-left {
   float: left;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mx-2\.5 {
@@ -1082,6 +1266,11 @@ textarea {
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .mb-3 {
@@ -1152,6 +1341,22 @@ textarea {
   margin-bottom: 5rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mt-44 {
+  margin-top: 11rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .inline {
   display: inline;
 }
@@ -1164,8 +1369,16 @@ textarea {
   display: grid;
 }
 
-.h-16 {
-  height: 4rem;
+.hidden {
+  display: none;
+}
+
+.h-17\.5 {
+  height: 4.375rem;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-180 {
@@ -1180,16 +1393,16 @@ textarea {
   height: 2rem;
 }
 
-.h-80 {
-  height: 20rem;
-}
-
-.h-88 {
-  height: 22rem;
+.h-full {
+  height: 100%;
 }
 
 .h-32 {
   height: 8rem;
+}
+
+.h-16 {
+  height: 4rem;
 }
 
 .h-4 {
@@ -1208,8 +1421,32 @@ textarea {
   height: 1.25rem;
 }
 
-.w-16 {
-  width: 4rem;
+.h-80 {
+  height: 20rem;
+}
+
+.h-88 {
+  height: 22rem;
+}
+
+.h-\[378px\] {
+  height: 378px;
+}
+
+.h-2\.5 {
+  height: 0.625rem;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
+.h-18\.5 {
+  height: 4.625rem;
+}
+
+.w-17\.5 {
+  width: 4.375rem;
 }
 
 .w-full {
@@ -1224,12 +1461,37 @@ textarea {
   width: auto;
 }
 
+.w-16 {
+  width: 4rem;
+}
+
 .w-4 {
   width: 1rem;
 }
 
+.w-\[706px\] {
+  width: 706px;
+}
+
+.w-\[5px\] {
+  width: 5px;
+}
+
+.w-2\.5 {
+  width: 0.625rem;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
 .-translate-y-8 {
   --tw-translate-y: -2rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-\[10\.25rem\] {
+  --tw-translate-y: 10.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1255,6 +1517,10 @@ textarea {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
 .grid-rows-3 {
   grid-template-rows: repeat(3, minmax(0, 1fr));
 }
@@ -1267,8 +1533,16 @@ textarea {
   flex-direction: column;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -1289,6 +1563,10 @@ textarea {
 
 .gap-40 {
   gap: 10rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .space-y-14 > :not([hidden]) ~ :not([hidden]) {
@@ -1313,6 +1591,36 @@ textarea {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-2\.5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.625rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.625rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
+.space-x-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-y-hidden {
@@ -1343,6 +1651,10 @@ textarea {
   border-left-width: 4px;
 }
 
+.border-t {
+  border-top-width: 1px;
+}
+
 .border-\[\#eeeeee\] {
   --tw-border-opacity: 1;
   border-color: rgb(238 238 238 / var(--tw-border-opacity));
@@ -1361,6 +1673,25 @@ textarea {
 .border-terranus-tertiary {
   --tw-border-opacity: 1;
   border-color: rgb(226 152 202 / var(--tw-border-opacity));
+}
+
+.border-terranus-green {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 165 158 / var(--tw-border-opacity));
+}
+
+.border-terranus-gray-1 {
+  --tw-border-opacity: 1;
+  border-color: rgb(79 78 78 / var(--tw-border-opacity));
+}
+
+.border-terranus-secondary-2 {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 115 146 / var(--tw-border-opacity));
+}
+
+.border-opacity-30 {
+  --tw-border-opacity: 0.3;
 }
 
 .bg-white {
@@ -1430,14 +1761,9 @@ textarea {
   padding: 3rem;
 }
 
-.py-2\.5 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .px-10 {
@@ -1455,11 +1781,6 @@ textarea {
   padding-right: 1px;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -1475,9 +1796,9 @@ textarea {
   padding-right: 2rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .py-3 {
@@ -1490,14 +1811,34 @@ textarea {
   padding-right: 0.5rem;
 }
 
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.py-18 {
+  padding-top: 4.75rem;
+  padding-bottom: 4.75rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .pl-3 {
@@ -1584,6 +1925,18 @@ textarea {
   padding-bottom: 2.5rem;
 }
 
+.pt-40 {
+  padding-top: 10rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1642,6 +1995,10 @@ textarea {
   text-transform: uppercase;
 }
 
+.leading-tight {
+  line-height: 1.25;
+}
+
 .leading-snug {
   line-height: 1.375;
 }
@@ -1656,6 +2013,10 @@ textarea {
 
 .leading-loose {
   line-height: 2;
+}
+
+.leading-10 {
+  line-height: 2.5rem;
 }
 
 .text-terranus-green {
@@ -1681,6 +2042,11 @@ textarea {
 .text-terranus-tertiary {
   --tw-text-opacity: 1;
   color: rgb(226 152 202 / var(--tw-text-opacity));
+}
+
+.text-terranus-secondary-2 {
+  --tw-text-opacity: 1;
+  color: rgb(0 115 146 / var(--tw-text-opacity));
 }
 
 .transition {
@@ -1735,6 +2101,10 @@ textarea {
 .placeholder\:text-white::placeholder {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.first\:mb-8:first-child {
+  margin-bottom: 2rem;
 }
 
 .last\:col-span-2:last-child {
@@ -1792,6 +2162,8 @@ textarea {
 @media (min-width: 768px) {
   .md\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -1813,39 +2185,74 @@ textarea {
   @media (min-width: 768px) {
     .md\:container {
       max-width: 768px;
+      padding-right: 7rem;
+      padding-left: 7rem;
     }
   }
 
   @media (min-width: 1024px) {
     .md\:container {
       max-width: 1024px;
-      padding-right: 4rem;
-      padding-left: 4rem;
+      padding-right: 10.5rem;
+      padding-left: 10.5rem;
     }
   }
 
   @media (min-width: 1280px) {
     .md\:container {
       max-width: 1280px;
+      padding-right: 13rem;
+      padding-left: 13rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .md\:container {
+      max-width: 1440px;
       padding-right: 16.5rem;
       padding-left: 16.5rem;
     }
   }
 
-  @media (min-width: 1536px) {
-    .md\:container {
-      max-width: 1536px;
-      padding-right: 20.5rem;
-      padding-left: 20.5rem;
-    }
+  .md\:absolute {
+    position: absolute;
+  }
+
+  .md\:relative {
+    position: relative;
   }
 
   .md\:-bottom-20 {
     bottom: -5rem;
   }
 
+  .md\:left-0 {
+    left: 0px;
+  }
+
+  .md\:right-0 {
+    right: 0px;
+  }
+
+  .md\:top-\[54px\] {
+    top: 54px;
+  }
+
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
+  }
+
+  .md\:col-span-10 {
+    grid-column: span 10 / span 10;
+  }
+
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .md\:mx-8 {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
   .md\:mr-2\.5 {
@@ -1856,8 +2263,24 @@ textarea {
     margin-right: 0.5rem;
   }
 
+  .md\:h-192 {
+    height: 48rem;
+  }
+
+  .md\:h-160 {
+    height: 40rem;
+  }
+
   .md\:h-102 {
     height: 25rem;
+  }
+
+  .md\:h-36 {
+    height: 9rem;
+  }
+
+  .md\:h-18\.5 {
+    height: 4.625rem;
   }
 
   .md\:w-4\/5 {
@@ -1866,6 +2289,14 @@ textarea {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-\[706px\] {
+    width: 706px;
+  }
+
+  .md\:w-28 {
+    width: 7rem;
   }
 
   .md\:basis-4\/5 {
@@ -1918,13 +2349,39 @@ textarea {
     margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .md\:space-x-\[1\.68rem\] > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1.68rem * var(--tw-space-x-reverse));
+    margin-left: calc(1.68rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2rem * var(--tw-space-x-reverse));
+    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:space-x-12 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(3rem * var(--tw-space-x-reverse));
+    margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
   .md\:border-l-30 {
     border-left-width: 30px;
   }
 
-  .md\:px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
+  .md\:border-b-0 {
+    border-bottom-width: 0px;
+  }
+
+  .md\:border-r {
+    border-right-width: 1px;
+  }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .md\:px-32 {
@@ -1937,9 +2394,9 @@ textarea {
     padding-bottom: 3rem;
   }
 
-  .md\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+  .md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .md\:px-22 {
@@ -1947,9 +2404,19 @@ textarea {
     padding-right: 5.5rem;
   }
 
+  .md\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .md\:px-14 {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
+  }
+
+  .md\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .md\:pb-8 {
@@ -1958,6 +2425,10 @@ textarea {
 
   .md\:pt-0 {
     padding-top: 0px;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0px;
   }
 
   .md\:text-left {
@@ -1979,8 +2450,18 @@ textarea {
     line-height: 2.5rem;
   }
 
-  .md\:odd\:flex-row:nth-child(odd) {
-    flex-direction: row;
+  .md\:text-blogHeading {
+    font-size: 55px;
+    line-height: 55px;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-\[10px\] {
+    font-size: 10px;
   }
 
   .md\:even\:-translate-y-32:nth-child(even) {
@@ -1988,7 +2469,7 @@ textarea {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  .md\:even\:flex-row-reverse:nth-child(even) {
+  .even\:md\:flex-row-reverse:nth-child(even) {
     flex-direction: row-reverse;
   }
 }
@@ -2011,17 +2492,28 @@ textarea {
     margin-right: 0px;
   }
 
-  .lg\:mx-16 {
-    margin-left: 4rem;
-    margin-right: 4rem;
-  }
-
   .lg\:mb-20 {
     margin-bottom: 5rem;
   }
 
-  .lg\:h-64 {
-    height: 16rem;
+  .lg\:h-180 {
+    height: 45rem;
+  }
+
+  .lg\:h-102 {
+    height: 25rem;
+  }
+
+  .lg\:h-80 {
+    height: 20rem;
+  }
+
+  .lg\:h-88 {
+    height: 22rem;
+  }
+
+  .lg\:h-\[10rem\] {
+    height: 10rem;
   }
 
   .lg\:h-24 {
@@ -2036,8 +2528,24 @@ textarea {
     height: 9rem;
   }
 
+  .lg\:h-65 {
+    height: 16.25rem;
+  }
+
+  .lg\:h-18\.5 {
+    height: 4.625rem;
+  }
+
+  .lg\:w-\[14rem\] {
+    width: 14rem;
+  }
+
   .lg\:w-24 {
     width: 6rem;
+  }
+
+  .lg\:w-\[16\.25rem\] {
+    width: 16.25rem;
   }
 
   .lg\:grid-cols-2 {
@@ -2052,6 +2560,19 @@ textarea {
     gap: 1.5rem;
   }
 
+  .lg\:gap-\[3\.75rem\] {
+    gap: 3.75rem;
+  }
+
+  .lg\:p-0 {
+    padding: 0px;
+  }
+
+  .lg\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
   .lg\:px-22 {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
@@ -2062,9 +2583,19 @@ textarea {
     padding-bottom: 4.75rem;
   }
 
-  .lg\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .lg\:px-\[169px\] {
+    padding-left: 169px;
+    padding-right: 169px;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lg\:text-4xl {
@@ -2074,12 +2605,69 @@ textarea {
 }
 
 @media (min-width: 1280px) {
+  .xl\:absolute {
+    position: absolute;
+  }
+
+  .xl\:relative {
+    position: relative;
+  }
+
+  .xl\:my-2\.5 {
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .xl\:my-2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .xl\:mx-16 {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
   .xl\:ml-0 {
     margin-left: 0px;
   }
 
   .xl\:mr-10 {
     margin-right: 2.5rem;
+  }
+
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:h-102 {
+    height: 25rem;
+  }
+
+  .xl\:h-\[378px\] {
+    height: 378px;
+  }
+
+  .xl\:h-65 {
+    height: 16.25rem;
+  }
+
+  .xl\:w-65 {
+    width: 16.25rem;
+  }
+
+  .xl\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .xl\:pl-\[16\.5rem\] {
+    padding-left: 16.5rem;
   }
 
   .xl\:text-lg {
@@ -2106,9 +2694,44 @@ textarea {
   }
 }
 
-@media (min-width: 1536px) {
-  .\32xl\:w-3\/5 {
-    width: 60%;
+@media (min-width: 1440px) {
+  .\32xl\:min-h-\[378px\] {
+    min-height: 378px;
+  }
+
+  .\32xl\:translate-y-\[10\.25rem\] {
+    --tw-translate-y: 10.25rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .\32xl\:px-\[4\.125rem\] {
+    padding-left: 4.125rem;
+    padding-right: 4.125rem;
+  }
+
+  .\32xl\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .\32xl\:pl-15 {
+    padding-left: 3.75rem;
+  }
+
+  .\32xl\:pr-22\.5 {
+    padding-right: 5.625rem;
+  }
+
+  .\32xl\:pr-22 {
+    padding-right: 5.5rem;
+  }
+
+  .\32xl\:pt-11 {
+    padding-top: 2.75rem;
+  }
+
+  .\32xl\:pb-10 {
+    padding-bottom: 2.5rem;
   }
 }
 
